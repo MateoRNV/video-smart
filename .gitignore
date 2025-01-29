@@ -13,3 +13,22 @@ obj/
 
 # Configuración de depuración
 launchSettings.json
+
+# Archivos de bases de datos SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Archivos de logs
+logs/
+*.log
+
+# Archivos de migraciones (Opcional, si no quieres incluirlas en Git)
+Migrations/
+
+# Dependencias de NuGet
+packages/
+
+# Archivos de Mac/Linux
+.DS_Store
+Thumbs.db
