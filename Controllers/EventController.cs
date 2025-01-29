@@ -28,5 +28,46 @@ namespace VideoSmartApi.Controllers
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(CreateEvent), new { id = newEvent.Id }, newEvent);
         }
+
+        //  EXTRA for testing
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEventById(long id)
+        {
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null) return NotFound();
+            return Ok(ev);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllEvents()
+        {
+            var events = await _context.Events.ToListAsync();
+            return Ok(events);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEvent(long id, [FromBody] Event updatedEvent)
+        {
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null) return NotFound();
+
+            ev.Type = updatedEvent.Type;
+            ev.CreatedAt = updatedEvent.CreatedAt;
+
+            _context.Events.Update(ev);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEvent(long id)
+        {
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null) return NotFound();
+
+            _context.Events.Remove(ev);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
