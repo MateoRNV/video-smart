@@ -1,0 +1,15 @@
+# Archivos de Visual Studio
+.vs/
+
+# Archivos de compilación de .NET
+bin/
+obj/
+
+# Archivos de usuario y configuración local
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuración de depuración
+launchSettings.json
