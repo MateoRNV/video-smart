@@ -30,7 +30,17 @@ Pequena API em .NET 8
 
   **Extras para testes**
   - `POST /api/players` → Criar uma nova metrica  
-  - `POST /api/sessions` → Criar uma sessão (necessária para os eventos)  
+  - `POST /api/sessions` → Criar uma sessão (necessária para os eventos)
+  - `GET /api/players` → Obter todos os players  
+  - `PUT /api/players/{id}` → Atualizar um player  
+  - `DELETE /api/players/{id}` → Remover um player  
+  - `GET /api/events/{id}` → Obter um evento pelo ID  
+  - `GET /api/events` → Obter todos os eventos  
+  - `PUT /api/events/{id}` → Atualizar um evento  
+  - `DELETE /api/events/{id}` → Remover um evento  
+  - `GET /api/sessions/{id}` → Obter uma sessão pelo ID  
+  - `GET /api/sessions` → Obter todas as sessões  
+  - `DELETE /api/sessions/{id}` → Remover uma sessão  
 
 - **Events**
 
